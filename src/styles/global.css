@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+:root {
+  --color-cornflower-blue-50: #f0f5fe;
+  --color-cornflower-blue-100: #dde7fc;
+  --color-cornflower-blue-200: #c2d6fb;
+  --color-cornflower-blue-300: #99bdf7;
+  --color-cornflower-blue-400: #6194f1;
+  --color-cornflower-blue-500: #4575ec;
+  --color-cornflower-blue-600: #3057e0;
+  --color-cornflower-blue-700: #2743ce;
+  --color-cornflower-blue-800: #2638a7;
+  --color-cornflower-blue-900: #243484;
+  --color-cornflower-blue-950: #1a2151;
+  --bg-primary: #111216;
+  --bg-secondary: #181a20;
+  --text-color: #d1d5db;
+  --textColor-secondary: #9ca3af;
+  --border: rgba(255, 255, 255, 0.08);
+  --hover-card: #1d2028;
+}
+
+body {
+  font-family: "Onest", sans-serif;
+  background-color: var(--bg-primary);
+  color: white;
+}
