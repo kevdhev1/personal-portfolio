@@ -1,25 +1,45 @@
 :root {
-  --color-cornflower-blue-50: #f0f5fe;
-  --color-cornflower-blue-100: #dde7fc;
-  --color-cornflower-blue-200: #c2d6fb;
-  --color-cornflower-blue-300: #99bdf7;
-  --color-cornflower-blue-400: #6194f1;
-  --color-cornflower-blue-500: #4575ec;
-  --color-cornflower-blue-600: #3057e0;
-  --color-cornflower-blue-700: #2743ce;
-  --color-cornflower-blue-800: #2638a7;
-  --color-cornflower-blue-900: #243484;
-  --color-cornflower-blue-950: #1a2151;
-  --bg-primary: #111216;
-  --bg-secondary: #181a20;
-  --text-color: #d1d5db;
-  --textColor-secondary: #9ca3af;
-  --border: rgba(255, 255, 255, 0.08);
-  --hover-card: #1d2028;
+    --font-heading: "DM Serif Display", serif;
+    --font-body: "Plus Jakarta Sans Variable", sans-serif;
+    --color-electric-violet-50: #f6f3ff;
+    --color-electric-violet-100: #efeafd;
+    --color-electric-violet-200: #e0d7fd;
+    --color-electric-violet-300: #c9b8fa;
+    --color-electric-violet-400: #af8ff6;
+    --color-electric-violet-500: #9562f0;
+    --color-electric-violet-600: #8741e6;
+    --color-electric-violet-700: #7f3ad5;
+    --color-electric-violet-800: #6426b1;
+    --color-electric-violet-900: #532191;
+    --color-electric-violet-950: #331362;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5c5c5c;
+    --border-color: #8f8f9d;
+    --bg-primary: #fafaf9;
+    --bg-secondary: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Onest", sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--textColor-secondary);
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    background-color: var(--bg-primary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-secondary);
+}
+
+ul {
+    list-style: none;
 }
