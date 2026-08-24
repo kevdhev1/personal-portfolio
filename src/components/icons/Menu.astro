@@ -2,29 +2,17 @@
 
 ---
 
-<svg class="icon" viewBox="0 0 24 24" fill="currentColor"
-    ><g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"
-    ></g>
-    <path
-        d="M4 18L20 18"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"></path>
-    <path
-        d="M4 12L20 12"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"></path>
-    <path
-        d="M4 6L20 6"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"></path>
+<svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    {...Astro.props}
+>
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M4 6l16 0"></path>
+    <path d="M4 12l16 0"></path>
+    <path d="M4 18l16 0"></path>
 </svg>
-
-<style>
-    .icon {
-        width: 50px;
-        height: 50px;
-    }
-</style>
