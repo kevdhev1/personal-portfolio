@@ -3,13 +3,15 @@ import Code from "@/components/icons/Code.astro";
 import Menu from "@/components/icons/Menu.astro";
 ---
 
-<header>
-    <nav>
-        <a href="#home">
-            <Code />
-            Kevin Marquez
+<header class="header">
+    <nav class="navbar">
+        <a href="#home" class="logo">
+            <Code class="code-icon" />
+            <span class="dm-serif">
+                <span class="bold">Kevin</span> Marquez
+            </span>
         </a>
-        <ul>
+        <ul class="nav-links">
             <li><a href="#stack">Stack</a></li>
             <li><a href="#projects">Proyectos</a></li>
             <li><a href="#experience">Experiencia</a></li>
@@ -19,11 +21,158 @@ import Menu from "@/components/icons/Menu.astro";
         <button
             type="button"
             id="menu-toggle"
+            class="menu-btn"
             aria-label="Abrir menú"
             aria-expanded="false"
             aria-controls="nav-menu"
         >
-            <Menu />
+            <Menu class="menu-icon" />
         </button>
     </nav>
 </header>
+
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        padding: 1.25rem 1.25rem;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background-color: rgba(250, 250, 249, 0.85);
+        border-bottom: 1px solid transparent;
+        transition:
+            border-bottom 0.3s ease,
+            border-color 0.3s ease,
+            background-color 0.3s ease;
+    }
+
+    header.scrolled {
+        padding: 0.75rem 1.25rem;
+        border-bottom-color: rgb(209, 209, 209);
+        background-color: rgba(250, 250, 249, 0.98);
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--text-primary);
+        font-size: 1.4rem;
+        padding: 0.25rem;
+    }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        cursor: pointer;
+        padding: 0.25rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgba(250, 250, 249, 0.98);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.75rem;
+        padding: 0;
+        transition:
+            height 0.35s cubic-bezier(0.4, 0, 0.2, 1) ease,
+            padding 0.35s ease;
+    }
+
+    .nav-links.is-open {
+        height: calc(47vh - 100%);
+        padding: 2.5rem 1.5rem;
+    }
+
+    .nav-links a {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--color-electric-violet-700);
+    }
+
+    .nav-links li:last-child a {
+        display: inline-block;
+        background-color: var(--text-primary);
+        line-height: 1;
+        color: var(--bg-secondary);
+        padding: 0.7rem 1.5rem;
+        border-radius: 9999px;
+        transition:
+            background-color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .nav-links li:last-child a:hover {
+        background-color: var(--color-electric-violet-700);
+        transform: translateY(-1px);
+        color: var(--bg-secondary);
+    }
+</style>
+
+<script>
+    const header = document.querySelector(".header");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const links = document.querySelectorAll(".nav-links a");
+
+    // 1. Reducción de altura al hacer scroll
+    const handleScroll = () => {
+        if (window.scrollY > 20) {
+            header?.classList.add("scrolled");
+        } else {
+            header?.classList.remove("scrolled");
+        }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Verifica la posición si el usuario recarga la página con scroll
+
+    // 2. Abrir / Cerrar Menú Móvil y actualizar accesibilidad
+    menuToggle?.addEventListener("click", () => {
+        const isOpen = navLinks?.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Cerrar menú" : "Abrir menú",
+        );
+    });
+
+    // 3. Cerrar el menú automáticamente al hacer clic en una sección
+    links.forEach((link) => {
+        link.addEventListener("click", () => {
+            navLinks?.classList.remove("is-open");
+            menuToggle?.setAttribute("aria-expanded", "false");
+            menuToggle?.setAttribute("aria-label", "Abrir menú");
+        });
+    });
+</script>

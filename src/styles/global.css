@@ -43,3 +43,24 @@ a {
 ul {
     list-style: none;
 }
+
+.dm-serif {
+    font-family: var(--font-heading);
+}
+
+.image {
+    width: 10px;
+    height: 10px;
+}
+
+/* ============== NAVBAR ICONS ============== */
+.code-icon {
+    width: 35px;
+    height: 35px;
+    color: var(--color-electric-violet-600);
+}
+
+.menu-icon {
+    width: 30px;
+    height: 30px;
+}
