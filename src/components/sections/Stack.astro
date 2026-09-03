@@ -1,5 +1,16 @@
 ---
-import TechList from "@/components/ui/TechList.astro";
+import TechCard from "@/components/ui/TechCard.astro";
+import Python from "@/components/icons/Python.astro";
+import Typescript from "@/components/icons/Typescript.astro";
+import React from "@/components/icons/React.astro";
+import Fastapi from "@/components/icons/Fastapi.astro";
+
+const STACK = [
+    { name: "Python", icon: Python },
+    { name: "TypeScript", icon: Typescript },
+    { name: "React", icon: React },
+    { name: "FastAPI", icon: Fastapi },
+];
 ---
 
 <section id="stack">
@@ -9,5 +20,11 @@ import TechList from "@/components/ui/TechList.astro";
         Tecnologías que utilizo para desarrollar mis proyectos y construir
         soluciones de principio a fin.
     </p>
-    <TechList />
+    <ul>
+        {
+            STACK.map(({ name, icon: Icon }) => (
+                <TechCard name={name} icon={Icon} />
+            ))
+        }
+    </ul>
 </section>
