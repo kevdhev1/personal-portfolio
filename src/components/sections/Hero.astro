@@ -5,37 +5,126 @@ import Linkedin from "@/components/icons/Linkedin.astro";
 import Github from "@/components/icons/Github.astro";
 ---
 
-<section id="home">
-    <div>
-        <span></span>
-        <p>Abierto a nuevas oportunidades</p>
+<section id="home" class="hero">
+    <div class="indicator">
+        <span class="circle"></span>
+        <p>ABIERTO A NUEVAS OPORTUNIDADES</p>
     </div>
-    <h1>
-        Convirtiendo las <span>grandes ideas</span><br />
-        en webs rápidas, accesibles <br />
-        & funcionales
+    <h1 class="dm-serif">
+        Convirtiendo las <span class="text-violet">grandes ideas</span> en webs rápidas,
+        accesibles & funcionales
     </h1>
-    <p>
-        Desarrollador de Software Autodidacta y Creador de Contenido sobre
-        Tecnología de Valencia, Venezuela. Especializado en el desarrollo de
-        aplicaciones web que automatizan flujos de trabajo y resuelven problemas
-        reales.
+    <p class="description">
+        Desarrollador de software & creador de contenido sobre tecnología.
+        Especializado en el desarrollo de aplicaciones web.
     </p>
-    <div>
-        <div>
-            <Copy />
+    <div class="socials">
+        <div class="email">
+            <Copy class="copy-icon" />
             <p>kmarrufo62@gmail.com</p>
         </div>
-        <ul>
+        <ul class="social-links">
             <li>
-                <a href="#"><Cv /></a>
+                <a href="#"><Cv class="hero-icon" /></a>
             </li>
             <li>
-                <a href="#"><Linkedin /></a>
+                <a href="#"><Linkedin class="hero-icon" /></a>
             </li>
             <li>
-                <a href="#"><Github /></a>
+                <a href="#"><Github class="hero-icon" /></a>
             </li>
         </ul>
     </div>
 </section>
+
+<style>
+    .hero {
+        width: 350px;
+        margin: 6rem auto 1.5rem auto;
+        padding: 1rem;
+        border-bottom: 1px solid rgb(209, 209, 209);
+    }
+
+    .indicator {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .indicator p {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .circle {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--color-electric-violet-500);
+        animation: rec-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes rec-pulse {
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.15;
+            transform: scale(0.85);
+        }
+    }
+
+    h1 {
+        color: var(--text-primary);
+        max-width: 15ch;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .text-violet {
+        color: var(--color-electric-violet-500);
+    }
+
+    .description {
+        font-weight: 500;
+        font-size: 1.25em;
+        max-width: 25ch;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+        padding-bottom: 3rem;
+        gap: 1rem;
+    }
+
+    .email {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        padding: 1rem;
+        gap: 0.5rem;
+        font-weight: bold;
+        color: var(--bg-secondary);
+        background-color: var(--color-electric-violet-500);
+        border-radius: 9999px;
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .social-links a:hover {
+        color: var(--color-electric-violet-500);
+    }
+</style>
