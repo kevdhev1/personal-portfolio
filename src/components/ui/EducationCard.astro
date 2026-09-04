@@ -1,70 +1,21 @@
 ---
+interface Props {
+    title: string;
+    type: string;
+    institution: string;
+    year: string;
+    description: string;
+    skills: string[];
+}
 
+const { title, type, institution, year, description, skills } = Astro.props;
 ---
 
-<ul>
-    <li>
-        <h3>Titulo de la certificacion</h3>
-        <span>CERTIFICACION/ESTUDIO - EMPRESA/INSTITUCION - AÑO</span>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-            odit omnis alias, perferendis saepe dolorem? Earum incidunt dolorum
-            sapiente id neque soluta ex laborum, quae ipsa tempore. Dolore,
-            expedita rerum.
-        </p>
-        <ul>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-        </ul>
-    </li>
-    <li>
-        <h3>Titulo de la certificacion</h3>
-        <span>CERTIFICACION/ESTUDIO - EMPRESA/INSTITUCION - AÑO</span>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-            odit omnis alias, perferendis saepe dolorem? Earum incidunt dolorum
-            sapiente id neque soluta ex laborum, quae ipsa tempore. Dolore,
-            expedita rerum.
-        </p>
-        <ul>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-        </ul>
-    </li>
-    <li>
-        <h3>Titulo de la certificacion</h3>
-        <span>CERTIFICACION/ESTUDIO - EMPRESA/INSTITUCION - AÑO</span>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-            odit omnis alias, perferendis saepe dolorem? Earum incidunt dolorum
-            sapiente id neque soluta ex laborum, quae ipsa tempore. Dolore,
-            expedita rerum.
-        </p>
-        <ul>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-        </ul>
-    </li>
-    <li>
-        <h3>Titulo de la certificacion</h3>
-        <span>CERTIFICACION/ESTUDIO - EMPRESA/INSTITUCION - AÑO</span>
-        <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-            odit omnis alias, perferendis saepe dolorem? Earum incidunt dolorum
-            sapiente id neque soluta ex laborum, quae ipsa tempore. Dolore,
-            expedita rerum.
-        </p>
-        <ul>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-            <li>JavaScript</li>
-        </ul>
-    </li>
-</ul>
+<li class="education-card">
+    <h3>{title}</h3>
+    <span class="education-meta">{type} — {institution} — {year}</span>
+    <p class="description">{description}</p>
+    <ul class="skills-list">
+        {skills.map((skill) => <li class="skill-tag">{skill}</li>)}
+    </ul>
+</li>

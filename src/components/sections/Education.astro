@@ -1,5 +1,26 @@
 ---
 import EducationCard from "@/components/ui/EducationCard.astro";
+
+const EDUCATION = [
+    {
+        title: "Desarrollo Web Frontend y Componentes",
+        type: "Autodidacta",
+        institution: "Cursos & Proyectos",
+        year: "2024",
+        description:
+            "Especialización en construcción de aplicaciones web modernas, creación de arquitecturas limpias con Astro y dominio de CSS nativo.",
+        skills: ["Astro", "TypeScript", "JavaScript", "CSS Native"],
+    },
+    {
+        title: "Lógica de Programación y Desarrollo Backend",
+        type: "Certificación",
+        institution: "Plataforma de Aprendizaje",
+        year: "2023",
+        description:
+            "Formación en algoritmos, estructuras de datos, creación de APIs y automatización de procesos.",
+        skills: ["Python", "FastAPI", "Git", "Linux"],
+    },
+];
 ---
 
 <section id="education">
@@ -9,5 +30,8 @@ import EducationCard from "@/components/ui/EducationCard.astro";
         Formaciones académicas obtenidas para fortalecer y respaldar mis
         conocimientos y habilidades profesionales.
     </p>
-    <EducationCard />
+
+    <ul class="education-list">
+        {EDUCATION.map((item) => <EducationCard {...item} />)}
+    </ul>
 </section>
