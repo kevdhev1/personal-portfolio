@@ -1,0 +1,47 @@
+---
+interface Props {
+    title: string;
+    value: string;
+    href?: string;
+    icon: (_props: Record<string, any>) => any;
+    isExternal?: boolean;
+}
+
+const { title, value, href, icon: Icon, isExternal = true } = Astro.props;
+const isLink = Boolean(href);
+---
+
+<li class="contact-item">
+    {
+        isLink ? (
+            <a
+                href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                class="contact-element"
+            >
+                <div class="icon-wrapper">
+                    <Icon class="contact-icon" />
+                </div>
+                <div class="contact-info">
+                    <h4>{title}</h4>
+                    <p>{value}</p>
+                </div>
+            </a>
+        ) : (
+            <button
+                type="button"
+                class="contact-element copy-btn"
+                data-copy={value}
+            >
+                <div class="icon-wrapper">
+                    <Icon class="contact-icon" />
+                </div>
+                <div class="contact-info">
+                    <h4>{title}</h4>
+                    <p>{value}</p>
+                </div>
+            </button>
+        )
+    }
+</li>

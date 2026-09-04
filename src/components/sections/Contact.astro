@@ -1,5 +1,65 @@
 ---
-import ContactCard from "@/components/ui/ContactCard.astro";
+import ContactItem from "@/components/ui/ContactItem.astro";
+import emailIcon from "@/components/icons/Email.astro";
+import githubIcon from "@/components/icons/Github.astro";
+import youtubeIcon from "@/components/icons/Youtube.astro";
+import linkedinIcon from "@/components/icons/Linkedin.astro";
+import twitterIcon from "@/components/icons/Twitter.astro";
+import tiktokIcon from "@/components/icons/Tiktok.astro";
+import instagramIcon from "@/components/icons/Instagram.astro";
+import facebookIcon from "@/components/icons/Facebook.astro";
+import { Image } from "astro:assets";
+import profileImage from "@/assets/profile.webp";
+
+const CONTACT_CHANNELS = [
+    {
+        title: "Email",
+        value: "kmarrufo62@gmail.com",
+        icon: emailIcon,
+    },
+    {
+        title: "Github",
+        value: "@kevdhev1",
+        href: "#",
+        icon: githubIcon,
+    },
+    {
+        title: "Linkedin",
+        value: "@kevdhev",
+        href: "#",
+        icon: linkedinIcon,
+    },
+    {
+        title: "Youtube",
+        value: "@kevdhev",
+        href: "#",
+        icon: youtubeIcon,
+    },
+    {
+        title: "TikTok",
+        value: "@kevdhev",
+        href: "#",
+        icon: tiktokIcon,
+    },
+    {
+        title: "Twitter",
+        value: "@kevdhev1",
+        href: "#",
+        icon: twitterIcon,
+    },
+    {
+        title: "Instagram",
+        value: "@kevdhev",
+        href: "#",
+        icon: instagramIcon,
+    },
+    {
+        title: "Facebook",
+        value: "@kevdhev",
+        href: "#",
+        icon: facebookIcon,
+    },
+];
 ---
 
 <section id="contact">
@@ -10,5 +70,12 @@ import ContactCard from "@/components/ui/ContactCard.astro";
         contactarme directamente por correo o encontrarme en mis principales
         redes.
     </p>
-    <ContactCard />
+    <div>
+        <ul class="contact-list">
+            {CONTACT_CHANNELS.map((channel) => <ContactItem {...channel} />)}
+        </ul>
+        <div class="image-wrapper">
+            <Image src={profileImage} alt="Foto de perfil" />
+        </div>
+    </div>
 </section>
