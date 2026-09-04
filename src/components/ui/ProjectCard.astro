@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import Link from "@/components/icons/Link.astro";
+import Github from "@/components/icons/Github.astro";
+import Youtube from "@/components/icons/Youtube.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    image: ImageMetadata;
+    tags: string[];
+    link?: string;
+    github?: string;
+    youtube?: string;
+}
+
+const { title, description, image, tags, link, github, youtube } = Astro.props;
+---
+
+<li class="project-card">
+    <div class="image-wrapper">
+        <Image
+            src={image}
+            alt={`Captura de pantalla de ${title}`}
+            class="project-image"
+        />
+    </div>
+
+    <div class="project-info">
+        <h3>{title}</h3>
+        <p>{description}</p>
+
+        <ul class="tags-list">
+            {tags.map((tag) => <li class="tag">{tag}</li>)}
+        </ul>
+
+        <div class="project-actions">
+            {
+                link && (
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-link"
+                    >
+                        <Link class="link-icon" /> Ver Proyecto
+                    </a>
+                )
+            }
+
+            <ul class="social-links">
+                {
+                    github && (
+                        <li>
+                            <a
+                                href={github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Ver código en GitHub"
+                            >
+                                <Github class="project-icon" />
+                            </a>
+                        </li>
+                    )
+                }
+                {
+                    youtube && (
+                        <li>
+                            <a
+                                href={youtube}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Ver demo en YouTube"
+                            >
+                                <Youtube class="project-icon" />
+                            </a>
+                        </li>
+                    )
+                }
+            </ul>
+        </div>
+    </div>
+</li>

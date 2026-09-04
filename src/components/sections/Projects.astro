@@ -1,5 +1,19 @@
 ---
-import ProjectList from "@/components/ui/ProjectList.astro";
+import ProjectCard from "@/components/ui/ProjectCard.astro";
+import example from "@/assets/example.webp";
+
+const PROJECTS = [
+    {
+        title: "EJEMPLO DE PROYECTO",
+        description:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet fugit tenetur magnam dolor non dolorum.",
+        image: example,
+        tags: ["TypeScript", "React", "Python", "FastAPI"],
+        link: "#",
+        github: "#",
+        youtube: "#",
+    },
+];
 ---
 
 <section id="projects">
@@ -9,5 +23,7 @@ import ProjectList from "@/components/ui/ProjectList.astro";
         Proyectos desarrollados por mi cuenta desde cero hasta su despliegue y
         puesta en producción.
     </p>
-    <ProjectList />
+    <ul>
+        {PROJECTS.map((project) => <ProjectCard {...project} />)}
+    </ul>
 </section>
