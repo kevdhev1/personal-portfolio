@@ -1,5 +1,24 @@
 ---
 import ExperienceCard from "@/components/ui/ExperienceCard.astro";
+
+const EXPERIENCE = [
+    {
+        role: "Desarrollador Frontend",
+        company: "Proyecto / Freelance",
+        period: "2023 - Presente",
+        description:
+            "Diseño y desarrollo de interfaces web accesibles y optimizadas, aplicando buenas prácticas de desarrollo componentizado y CSS nativo.",
+        technologies: ["Astro", "TypeScript", "CSS", "Git"],
+    },
+    {
+        role: "Desarrollador Software",
+        company: "Empresa o Cliente",
+        period: "2022 - 2023",
+        description:
+            "Construcción de APIs y lógica de negocio para la automatización de procesos internos y herramientas de software.",
+        technologies: ["Python", "FastAPI", "JavaScript", "Linux"],
+    },
+];
 ---
 
 <section id="experience">
@@ -9,5 +28,8 @@ import ExperienceCard from "@/components/ui/ExperienceCard.astro";
         Experiencia y responsabilidades obtenidas en distintos entornos
         profesionales y proyectos reales.
     </p>
-    <ExperienceCard />
+
+    <ul class="experience-list">
+        {EXPERIENCE.map((item) => <ExperienceCard {...item} />)}
+    </ul>
 </section>

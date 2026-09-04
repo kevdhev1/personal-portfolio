@@ -1,48 +1,25 @@
 ---
+interface Props {
+    role: string;
+    company: string;
+    period: string;
+    description: string;
+    technologies: string[];
+}
 
+const { role, company, period, description, technologies } = Astro.props;
 ---
 
-<ul>
-    <li>
-        <div>
-            <h3>Nombre del Puesto</h3>
-            <p>Empresa</p>
-            <span>Tiempo en la Empresa</span>
-        </div>
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                quod nesciunt nulla facere eveniet consequatur impedit
-                doloribus, mollitia officia reiciendis recusandae eius vero
-                dignissimos nisi expedita quam ipsam illum sequi!
-            </p>
-            <ul>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Nodejs</li>
-                <li>React</li>
-            </ul>
-        </div>
-    </li>
-    <li>
-        <div>
-            <h3>Nombre del Puesto</h3>
-            <p>Empresa</p>
-            <span>Tiempo en la Empresa</span>
-        </div>
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                quod nesciunt nulla facere eveniet consequatur impedit
-                doloribus, mollitia officia reiciendis recusandae eius vero
-                dignissimos nisi expedita quam ipsam illum sequi!
-            </p>
-            <ul>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Nodejs</li>
-                <li>React</li>
-            </ul>
-        </div>
-    </li>
-</ul>
+<li class="experience-card">
+    <div class="experience-header">
+        <h3>{role}</h3>
+        <p class="company">{company}</p>
+        <span class="period">{period}</span>
+    </div>
+    <div class="experience-body">
+        <p class="description">{description}</p>
+        <ul class="tech-list">
+            {technologies.map((tech) => <li class="tech-tag">{tech}</li>)}
+        </ul>
+    </div>
+</li>
