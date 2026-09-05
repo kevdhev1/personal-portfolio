@@ -15,6 +15,7 @@
     --text-primary: #1a1a1a;
     --text-secondary: #5c5c5c;
     --border-color: #8f8f9d;
+    --border-bottom: 1px solid rgb(209, 209, 209);
     --bg-primary: #fafaf9;
     --bg-secondary: #fff;
 }
@@ -46,11 +47,17 @@ ul {
 
 .dm-serif {
     font-family: var(--font-heading);
+    color: var(--text-primary);
 }
 
 .project-image {
     width: 10px;
     height: 10px;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
 }
 
 /* ============== NAVBAR ICONS ============== */

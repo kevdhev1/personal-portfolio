@@ -13,14 +13,14 @@ const STACK = [
 ];
 ---
 
-<section id="stack">
-    <p>STACK</p>
-    <h2>Tecnologías</h2>
-    <p>
+<section id="stack" class="stack">
+    <p class="indicator">STACK</p>
+    <h2 class="dm-serif">Tecnologías</h2>
+    <p class="description">
         Tecnologías que utilizo para desarrollar mis proyectos y construir
         soluciones de principio a fin.
     </p>
-    <ul>
+    <ul class="tech-list">
         {
             STACK.map(({ name, icon: Icon }) => (
                 <TechCard name={name} icon={Icon} />
@@ -28,3 +28,36 @@ const STACK = [
         }
     </ul>
 </section>
+
+<style>
+    .stack {
+        width: 350px;
+        padding: 3rem 1rem;
+        margin: 1.5rem auto;
+        border-bottom: var(--border-bottom);
+    }
+
+    .indicator {
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 0.3rem;
+    }
+
+    .stack h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        font-size: 1.07rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+</style>

@@ -75,7 +75,11 @@ const CONTACT_CHANNELS = [
             {CONTACT_CHANNELS.map((channel) => <ContactItem {...channel} />)}
         </ul>
         <div class="image-wrapper">
-            <Image src={profileImage} alt="Foto de perfil" />
+            <Image
+                src={profileImage}
+                alt="Foto de perfil"
+                class="profile-image"
+            />
         </div>
     </div>
 </section>
