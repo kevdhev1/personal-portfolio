@@ -57,6 +57,7 @@ const { title, description, image, tags, link, github, youtube } = Astro.props;
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Ver código en GitHub"
+                                class="project-link"
                             >
                                 <Github class="project-icon" />
                             </a>
@@ -71,6 +72,7 @@ const { title, description, image, tags, link, github, youtube } = Astro.props;
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Ver demo en YouTube"
+                                class="project-link"
                             >
                                 <Youtube class="project-icon" />
                             </a>
@@ -81,3 +83,95 @@ const { title, description, image, tags, link, github, youtube } = Astro.props;
         </div>
     </div>
 </li>
+
+<style>
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 20px;
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease-in;
+    }
+
+    .project-card:hover {
+        border-color: var(--color-electric-violet-700);
+    }
+
+    .project-image {
+        width: 290px;
+        height: 190px;
+        border-radius: 20px;
+    }
+
+    .project-info h3 {
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+    }
+
+    .project-info p {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
+    .tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .tag {
+        font-weight: 600;
+        padding: 0.7rem;
+        border-radius: 20px;
+        border: 1px solid var(--border-bottom);
+        background-color: var(--bg-primary);
+    }
+
+    .project-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btn-link {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+        font-weight: 700;
+        transition: all 0.3s ease-in;
+    }
+
+    .btn-link:hover {
+        color: var(--color-electric-violet-700);
+    }
+
+    .link-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .project-link {
+        transition: all 0.3s ease-in;
+    }
+
+    .project-link:hover {
+        color: var(--color-electric-violet-700);
+    }
+
+    .project-icon {
+        width: 35px;
+        height: 35px;
+    }
+</style>

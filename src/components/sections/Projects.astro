@@ -16,14 +16,41 @@ const PROJECTS = [
 ];
 ---
 
-<section id="projects">
-    <p>MEJORES TRABAJOS</p>
-    <h2>Proyectos</h2>
-    <p>
+<section id="projects" class="projects">
+    <p class="indicator">MEJORES TRABAJOS</p>
+    <h2 class="dm-serif">Proyectos</h2>
+    <p class="description">
         Proyectos desarrollados por mi cuenta desde cero hasta su despliegue y
         puesta en producción.
     </p>
-    <ul>
+    <ul class="projects-list">
         {PROJECTS.map((project) => <ProjectCard {...project} />)}
     </ul>
 </section>
+
+<style>
+    .projects {
+        width: 350px;
+        padding: 3rem 1rem;
+        margin: 1.5rem auto;
+        border-bottom: var(--border-bottom);
+    }
+
+    .projects h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        font-size: 1.08rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .projects-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

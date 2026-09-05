@@ -6,7 +6,7 @@ import Github from "@/components/icons/Github.astro";
 ---
 
 <section id="home" class="hero">
-    <div class="indicator">
+    <div class="indicator-wrapper">
         <span class="circle"></span>
         <p>ABIERTO A NUEVAS OPORTUNIDADES</p>
     </div>
@@ -45,14 +45,14 @@ import Github from "@/components/icons/Github.astro";
         border-bottom: var(--border-bottom);
     }
 
-    .indicator {
+    .indicator-wrapper {
         display: flex;
         align-items: center;
         gap: 0.4rem;
         margin-bottom: 1rem;
     }
 
-    .indicator p {
+    .indicator-wrapper p {
         font-size: 0.8rem;
         font-weight: 600;
         letter-spacing: 1px;

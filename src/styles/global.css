@@ -50,9 +50,11 @@ ul {
     color: var(--text-primary);
 }
 
-.project-image {
-    width: 10px;
-    height: 10px;
+.indicator {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 0.3rem;
 }
 
 .profile-image {
