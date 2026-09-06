@@ -23,3 +23,57 @@ const { role, company, period, description, technologies } = Astro.props;
         </ul>
     </div>
 </li>
+
+<style>
+    .experience-card {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 20px;
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease-in;
+    }
+
+    .experience-card:hover {
+        border-color: var(--color-electric-violet-700);
+    }
+
+    .experience-header {
+        margin-bottom: 0.5rem;
+    }
+
+    .experience-card h3 {
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .company {
+        color: var(--color-electric-violet-800);
+        font-weight: 600;
+    }
+
+    .period {
+        font-weight: 600;
+    }
+
+    .description {
+        font-size: 1.08rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .tech-tag {
+        font-weight: 600;
+        padding: 0.7rem;
+        border-radius: 20px;
+        border: 1px solid var(--border-bottom);
+        background-color: var(--bg-tertiary);
+    }
+</style>
