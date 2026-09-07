@@ -12,10 +12,55 @@ const { title, type, institution, year, description, skills } = Astro.props;
 ---
 
 <li class="education-card">
-    <h3>{title}</h3>
-    <span class="education-meta">{type} — {institution} — {year}</span>
+    <h3 class="dm-serif">{title}</h3>
+    <span class="education-meta">{type} - {institution} - {year}</span>
     <p class="description">{description}</p>
     <ul class="skills-list">
         {skills.map((skill) => <li class="skill-tag">{skill}</li>)}
     </ul>
 </li>
+
+<style>
+    .education-card {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 20px;
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease-in;
+    }
+
+    .education-card:hover {
+        border-color: var(--color-electric-violet-700);
+    }
+
+    .education-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .education-meta {
+        font-weight: 600;
+        color: var(--color-electric-violet-800);
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        margin-bottom: 1rem;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .skill-tag {
+        font-weight: 600;
+        padding: 0.7rem;
+        border-radius: 20px;
+        border: 1px solid var(--border-bottom);
+        background-color: var(--bg-tertiary);
+    }
+</style>

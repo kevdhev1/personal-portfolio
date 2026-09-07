@@ -3,19 +3,19 @@ import EducationCard from "@/components/ui/EducationCard.astro";
 
 const EDUCATION = [
     {
-        title: "Desarrollo Web Frontend y Componentes",
-        type: "Autodidacta",
-        institution: "Cursos & Proyectos",
+        title: "Git & Github",
+        type: "Curso",
+        institution: "Platzi",
         year: "2024",
         description:
             "Especialización en construcción de aplicaciones web modernas, creación de arquitecturas limpias con Astro y dominio de CSS nativo.",
         skills: ["Astro", "TypeScript", "JavaScript", "CSS Native"],
     },
     {
-        title: "Lógica de Programación y Desarrollo Backend",
-        type: "Certificación",
-        institution: "Plataforma de Aprendizaje",
-        year: "2023",
+        title: "Electrónica de Consumo",
+        type: "Bachillerato",
+        institution: "Otto A. Gómez",
+        year: "2024",
         description:
             "Formación en algoritmos, estructuras de datos, creación de APIs y automatización de procesos.",
         skills: ["Python", "FastAPI", "Git", "Linux"],
@@ -23,10 +23,10 @@ const EDUCATION = [
 ];
 ---
 
-<section id="education">
-    <p>ESTUDIOS</p>
-    <h2>Educación & Certificaciones</h2>
-    <p>
+<section id="education" class="education">
+    <p class="indicator">ESTUDIOS</p>
+    <h2 class="dm-serif">Certificaciones</h2>
+    <p class="description">
         Formaciones académicas obtenidas para fortalecer y respaldar mis
         conocimientos y habilidades profesionales.
     </p>
@@ -35,3 +35,31 @@ const EDUCATION = [
         {EDUCATION.map((item) => <EducationCard {...item} />)}
     </ul>
 </section>
+
+<style>
+    .education {
+        width: 350px;
+        padding: 3rem 1rem;
+        margin: 1.5rem auto;
+        border-bottom: var(--border-bottom);
+    }
+
+    .education h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        font-size: 1.09rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .education-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+</style>
