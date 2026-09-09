@@ -1,17 +1,43 @@
 ---
-
 ---
 
 <footer>
     <div>
         <p>
-            &copy; 2026 Kevin Marquez. Hecho con {" "}
+            &copy; 2026 Kevin Marquez. Hecho con{" "}
             <span aria-hidden="true">💜</span>
         </p>
     </div>
     <div>
-        <a href="#" aria-label="Volver al inicio del sitio web">
+        <a
+            href="#"
+            aria-label="Volver al inicio del sitio web"
+            class="back-top"
+        >
             Volver al inicio &uarr;
         </a>
     </div>
 </footer>
+
+<style>
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 350px;
+        padding: 1rem 1rem 2.5rem 1rem;
+        margin: 1.5rem auto 0 auto;
+    }
+
+    .back-top {
+        font-weight: 800;
+        font-size: 1.1rem;
+        transition: all 0.3s ease-in;
+    }
+
+    .back-top:hover {
+        color: var(--color-electric-violet-700);
+    }
+</style>
