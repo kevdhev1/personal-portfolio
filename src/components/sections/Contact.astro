@@ -62,17 +62,19 @@ const CONTACT_CHANNELS = [
 ];
 ---
 
-<section id="contact">
-    <p>TRABAJEMOS JUNTOS</p>
-    <h2>Contacto</h2>
-    <p>
+<section id="contact" class="contact">
+    <p class="indicator">TRABAJEMOS JUNTOS</p>
+    <h2 class="dm-serif">Contacto</h2>
+    <p class="description">
         ¿Tienes alguna propuesta o simplemente quieres conectar? Puedes
         contactarme directamente por correo o encontrarme en mis principales
         redes.
     </p>
-    <div>
+    <div class="social-container">
         <ul class="contact-list">
-            {CONTACT_CHANNELS.map((channel) => <ContactItem {...channel} />)}
+            {CONTACT_CHANNELS.map((channel) => (
+                <ContactItem {...channel} />
+            ))}
         </ul>
         <div class="image-wrapper">
             <Image
@@ -83,3 +85,46 @@ const CONTACT_CHANNELS = [
         </div>
     </div>
 </section>
+
+<style>
+    .contact {
+        width: 350px;
+        padding: 3rem 1rem;
+        margin: 1.5rem auto;
+        border-bottom: var(--border-bottom);
+    }
+
+    .contact h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .description {
+        font-size: 1.02rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .profile-image {
+        width: 280px;
+        height: auto;
+        border-radius: 1rem;
+    }
+</style>
