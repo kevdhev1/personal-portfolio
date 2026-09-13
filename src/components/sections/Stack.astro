@@ -21,11 +21,9 @@ const STACK = [
         soluciones de principio a fin.
     </p>
     <ul class="tech-list">
-        {
-            STACK.map(({ name, icon: Icon }) => (
-                <TechCard name={name} icon={Icon} />
-            ))
-        }
+        {STACK.map(({ name, icon: Icon }) => (
+            <TechCard name={name} icon={Icon} />
+        ))}
     </ul>
 </section>
 
@@ -52,5 +50,23 @@ const STACK = [
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
+    }
+
+    /* ===== TABLET ===== */
+    @media (min-width: 768px) {
+        .stack {
+            width: 740px;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .stack h2 {
+            font-size: 2rem;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            max-width: 50ch;
+        }
     }
 </style>

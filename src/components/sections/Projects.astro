@@ -24,7 +24,9 @@ const PROJECTS = [
         puesta en producción.
     </p>
     <ul class="projects-list">
-        {PROJECTS.map((project) => <ProjectCard {...project} />)}
+        {PROJECTS.map((project) => (
+            <ProjectCard {...project} />
+        ))}
     </ul>
 </section>
 
@@ -52,5 +54,23 @@ const PROJECTS = [
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    /* ===== TABLET ===== */
+    @media (min-width: 768px) {
+        .projects {
+            width: 740px;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .projects h2 {
+            font-size: 2rem;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            max-width: 50ch;
+        }
     }
 </style>

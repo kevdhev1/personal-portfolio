@@ -31,54 +31,50 @@ const { title, description, image, tags, link, github, youtube } = Astro.props;
         <p>{description}</p>
 
         <ul class="tags-list">
-            {tags.map((tag) => <li class="tag">{tag}</li>)}
+            {tags.map((tag) => (
+                <li class="tag">{tag}</li>
+            ))}
         </ul>
 
         <div class="project-actions">
-            {
-                link && (
-                    <a
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-link"
-                    >
-                        <Link class="link-icon" /> Ver Proyecto
-                    </a>
-                )
-            }
+            {link && (
+                <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-link"
+                >
+                    <Link class="link-icon" /> Ver Proyecto
+                </a>
+            )}
 
             <ul class="social-links">
-                {
-                    github && (
-                        <li>
-                            <a
-                                href={github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Ver código en GitHub"
-                                class="project-link"
-                            >
-                                <Github class="project-icon" />
-                            </a>
-                        </li>
-                    )
-                }
-                {
-                    youtube && (
-                        <li>
-                            <a
-                                href={youtube}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Ver demo en YouTube"
-                                class="project-link"
-                            >
-                                <Youtube class="project-icon" />
-                            </a>
-                        </li>
-                    )
-                }
+                {github && (
+                    <li>
+                        <a
+                            href={github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Ver código en GitHub"
+                            class="project-link"
+                        >
+                            <Github class="project-icon" />
+                        </a>
+                    </li>
+                )}
+                {youtube && (
+                    <li>
+                        <a
+                            href={youtube}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Ver demo en YouTube"
+                            class="project-link"
+                        >
+                            <Youtube class="project-icon" />
+                        </a>
+                    </li>
+                )}
             </ul>
         </div>
     </div>
@@ -92,7 +88,7 @@ const { title, description, image, tags, link, github, youtube } = Astro.props;
         align-items: center;
         gap: 1rem;
         padding: 1rem;
-        border-radius: 20px;
+        border-radius: 1rem;
         background-color: var(--bg-secondary);
         border: 1px solid var(--border-color);
         transition: all 0.3s ease-in;
@@ -105,7 +101,7 @@ const { title, description, image, tags, link, github, youtube } = Astro.props;
     .project-image {
         width: 290px;
         height: 190px;
-        border-radius: 20px;
+        border-radius: 1rem;
     }
 
     .project-info h3 {
@@ -129,7 +125,7 @@ const { title, description, image, tags, link, github, youtube } = Astro.props;
     .tag {
         font-weight: 600;
         padding: 0.7rem;
-        border-radius: 20px;
+        border-radius: 1rem;
         border: 1px solid var(--border-bottom);
         background-color: var(--bg-tertiary);
     }
@@ -173,5 +169,17 @@ const { title, description, image, tags, link, github, youtube } = Astro.props;
     .project-icon {
         width: 35px;
         height: 35px;
+    }
+
+    /* ===== TABLET ===== */
+    @media (min-width: 768px) {
+        .project-card {
+            flex-direction: row;
+        }
+
+        .project-image {
+            width: 280px;
+            height: 200px;
+        }
     }
 </style>

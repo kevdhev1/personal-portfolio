@@ -11,8 +11,8 @@ import Github from "@/components/icons/Github.astro";
         <p>ABIERTO A NUEVAS OPORTUNIDADES</p>
     </div>
     <h1 class="dm-serif">
-        Convirtiendo las <span class="text-violet">grandes ideas</span> en webs rápidas,
-        accesibles & funcionales
+        Convirtiendo las <span class="text-violet">grandes ideas</span> en webs
+        rápidas, accesibles & funcionales
     </h1>
     <p class="description">
         Desarrollador de software & creador de contenido sobre tecnología.
@@ -25,13 +25,19 @@ import Github from "@/components/icons/Github.astro";
         </div>
         <ul class="social-links">
             <li>
-                <a href="#"><Cv class="hero-icon" /></a>
+                <a href="#">
+                    <Cv class="hero-icon" />
+                </a>
             </li>
             <li>
-                <a href="#"><Linkedin class="hero-icon" /></a>
+                <a href="#">
+                    <Linkedin class="hero-icon" />
+                </a>
             </li>
             <li>
-                <a href="#"><Github class="hero-icon" /></a>
+                <a href="#">
+                    <Github class="hero-icon" />
+                </a>
             </li>
         </ul>
     </div>
@@ -126,5 +132,28 @@ import Github from "@/components/icons/Github.astro";
 
     .social-links a:hover {
         color: var(--color-electric-violet-500);
+    }
+
+    /* ===== TABLET ===== */
+    @media (min-width: 768px) {
+        .hero {
+            width: 740px;
+            margin-top: 9rem;
+            padding-bottom: 5rem;
+        }
+
+        h1 {
+            max-width: 28ch;
+            font-size: 2.7rem;
+        }
+
+        .description {
+            font-size: 1.25em;
+            max-width: 35ch;
+        }
+
+        .socials {
+            flex-direction: row;
+        }
     }
 </style>
