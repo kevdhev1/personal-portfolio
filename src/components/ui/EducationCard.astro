@@ -13,10 +13,14 @@ const { title, type, institution, year, description, skills } = Astro.props;
 
 <li class="education-card">
     <h3 class="dm-serif">{title}</h3>
-    <span class="education-meta">{type} - {institution} - {year}</span>
+    <span class="education-meta">
+        {type} - {institution} - {year}
+    </span>
     <p class="description">{description}</p>
     <ul class="skills-list">
-        {skills.map((skill) => <li class="skill-tag">{skill}</li>)}
+        {skills.map((skill) => (
+            <li class="skill-tag">{skill}</li>
+        ))}
     </ul>
 </li>
 
@@ -25,7 +29,7 @@ const { title, type, institution, year, description, skills } = Astro.props;
         display: flex;
         flex-direction: column;
         padding: 1rem;
-        border-radius: 20px;
+        border-radius: 1rem;
         background-color: var(--bg-secondary);
         border: 1px solid var(--border-color);
         transition: all 0.3s ease-in;
@@ -38,6 +42,7 @@ const { title, type, institution, year, description, skills } = Astro.props;
     .education-card h3 {
         font-size: 1.4rem;
         margin-bottom: 0.2rem;
+        letter-spacing: 1px;
     }
 
     .education-meta {
@@ -59,8 +64,15 @@ const { title, type, institution, year, description, skills } = Astro.props;
     .skill-tag {
         font-weight: 600;
         padding: 0.7rem;
-        border-radius: 20px;
+        border-radius: 1rem;
         border: 1px solid var(--border-bottom);
         background-color: var(--bg-tertiary);
+    }
+
+    /* ===== TABLET ===== */
+    @media (min-width: 768px) {
+        .education-card {
+            width: 48%;
+        }
     }
 </style>

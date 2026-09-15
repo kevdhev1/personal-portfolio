@@ -90,7 +90,7 @@ const CONTACT_CHANNELS = [
     .contact {
         width: 350px;
         padding: 3rem 1rem;
-        margin: 1.5rem auto;
+        margin: 0 auto;
         border-bottom: var(--border-bottom);
     }
 
@@ -126,5 +126,27 @@ const CONTACT_CHANNELS = [
         width: 280px;
         height: auto;
         border-radius: 1rem;
+    }
+
+    /* ===== TABLET ===== */
+    @media (min-width: 768px) {
+        .contact {
+            width: 740px;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+        }
+
+        .description {
+            max-width: 60ch;
+        }
+
+        .contact-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 </style>

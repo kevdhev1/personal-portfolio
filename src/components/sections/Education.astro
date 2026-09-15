@@ -32,7 +32,9 @@ const EDUCATION = [
     </p>
 
     <ul class="education-list">
-        {EDUCATION.map((item) => <EducationCard {...item} />)}
+        {EDUCATION.map((item) => (
+            <EducationCard {...item} />
+        ))}
     </ul>
 </section>
 
@@ -61,5 +63,27 @@ const EDUCATION = [
         justify-content: center;
         align-items: center;
         gap: 1.5rem;
+    }
+
+    /* ===== TABLET ===== */
+    @media (min-width: 768px) {
+        .education {
+            width: 740px;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .education h2 {
+            font-size: 2rem;
+        }
+
+        .description {
+            max-width: 50ch;
+        }
+
+        .education-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 </style>
