@@ -10,11 +10,21 @@ import Menu from "@/components/icons/Menu.astro";
             <span class="dm-serif bold"> Kevin Marquez </span>
         </a>
         <ul class="nav-links">
-            <li><a href="#stack">Stack</a></li>
-            <li><a href="#projects">Proyectos</a></li>
-            <li><a href="#experience">Experiencia</a></li>
-            <li><a href="#education">Educación</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li>
+                <a href="#stack">Stack</a>
+            </li>
+            <li>
+                <a href="#projects">Proyectos</a>
+            </li>
+            <li>
+                <a href="#experience">Experiencia</a>
+            </li>
+            <li>
+                <a href="#education">Educación</a>
+            </li>
+            <li>
+                <a href="#contact">Contacto</a>
+            </li>
         </ul>
         <button
             type="button"
@@ -58,6 +68,7 @@ import Menu from "@/components/icons/Menu.astro";
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        padding: 0 1rem;
     }
 
     .logo {
@@ -134,6 +145,32 @@ import Menu from "@/components/icons/Menu.astro";
         background-color: var(--color-electric-violet-700);
         transform: translateY(-1px);
         color: var(--bg-secondary);
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 1024px) {
+        .menu-btn {
+            display: none;
+        }
+
+        .nav-links {
+            position: static;
+            height: auto;
+            width: auto;
+            overflow: visible;
+            background-color: transparent;
+            flex-direction: row;
+            padding: 0.25rem;
+            gap: 1.6rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+        }
+
+        .nav-links li:last-child a {
+            padding: 0.7rem 1.1rem;
+        }
     }
 </style>
 
