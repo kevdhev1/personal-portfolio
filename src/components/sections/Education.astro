@@ -17,8 +17,26 @@ const EDUCATION = [
         institution: "Otto A. Gómez",
         year: "2024",
         description:
-            "Formación en algoritmos, estructuras de datos, creación de APIs y automatización de procesos.",
-        skills: ["Python", "FastAPI", "Git", "Linux"],
+            "Formación en algoritmos, estructuras de datos, creación de APIs y automatización de procesos. Un poco mas de texto para emparejar.",
+        skills: ["Python", "FastAPI", "Git", "Linux", "Hardware"],
+    },
+    {
+        title: "Ejemplo3",
+        type: "Bachillerato",
+        institution: "Otto A. Gómez",
+        year: "2024",
+        description:
+            "Formación en algoritmos, estructuras de datos, creación de APIs y automatización de procesos. Un poco mas de texto para emparejar.",
+        skills: ["Python", "FastAPI", "Git", "Linux", "Hardware"],
+    },
+    {
+        title: "Ejemplo4",
+        type: "Bachillerato",
+        institution: "Otto A. Gómez",
+        year: "2024",
+        description:
+            "Formación en algoritmos, estructuras de datos, creación de APIs y automatización de procesos. Un poco mas de texto para emparejar.",
+        skills: ["Python", "FastAPI", "Git", "Linux", "Hardware"],
     },
 ];
 ---
@@ -84,6 +102,27 @@ const EDUCATION = [
         .education-list {
             flex-direction: row;
             flex-wrap: wrap;
+        }
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 1024px) {
+        .education {
+            width: 970px;
+        }
+
+        .education h2 {
+            font-size: 2.25rem;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .education-list {
+            justify-content: flex-start;
         }
     }
 </style>

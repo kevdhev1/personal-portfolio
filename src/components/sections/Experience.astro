@@ -25,7 +25,7 @@ const EXPERIENCE = [
     <p class="indicator">¿DÓNDE HE TRABAJADO?</p>
     <h2 class="dm-serif">Experiencia</h2>
     <p class="description">
-        Experiencia y responsabilidades obtenidas en distintos entornos
+        Trayectoria y responsabilidades obtenidas en distintos entornos
         profesionales y proyectos reales.
     </p>
 
@@ -77,6 +77,23 @@ const EXPERIENCE = [
 
         .description {
             max-width: 50ch;
+        }
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 1024px) {
+        .experience {
+            width: 970px;
+        }
+
+        .experience h2 {
+            font-size: 2.25rem;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
         }
     }
 </style>

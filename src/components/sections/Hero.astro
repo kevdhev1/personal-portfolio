@@ -148,12 +148,27 @@ import Github from "@/components/icons/Github.astro";
         }
 
         .description {
-            font-size: 1.25em;
+            font-size: 1.25rem;
             max-width: 35ch;
         }
 
         .socials {
             flex-direction: row;
+        }
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 1024px) {
+        .hero {
+            width: 970px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        .description {
+            font-size: 1.3rem;
         }
     }
 </style>

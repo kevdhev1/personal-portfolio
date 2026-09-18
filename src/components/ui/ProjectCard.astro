@@ -182,4 +182,16 @@ const { title, description, image, tags, link, github, youtube } = Astro.props;
             height: 200px;
         }
     }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 1024px) {
+        .project-card {
+            gap: 1.5rem;
+        }
+
+        .project-image {
+            width: 300px;
+            height: 210px;
+        }
+    }
 </style>

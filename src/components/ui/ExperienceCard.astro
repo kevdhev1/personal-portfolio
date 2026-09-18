@@ -12,14 +12,16 @@ const { role, company, period, description, technologies } = Astro.props;
 
 <li class="experience-card">
     <div class="experience-header">
-        <h3>{role}</h3>
+        <h3 class="dm-serif">{role}</h3>
         <p class="company">{company}</p>
         <span class="period">{period}</span>
     </div>
     <div class="experience-body">
         <p class="description">{description}</p>
         <ul class="tech-list">
-            {technologies.map((tech) => <li class="tech-tag">{tech}</li>)}
+            {technologies.map((tech) => (
+                <li class="tech-tag">{tech}</li>
+            ))}
         </ul>
     </div>
 </li>
@@ -46,7 +48,8 @@ const { role, company, period, description, technologies } = Astro.props;
     .experience-card h3 {
         color: var(--text-primary);
         font-size: 1.2rem;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.1rem;
+        letter-spacing: 1px;
     }
 
     .company {
@@ -61,6 +64,7 @@ const { role, company, period, description, technologies } = Astro.props;
     .description {
         font-size: 1.08rem;
         margin-bottom: 0.5rem;
+        line-height: 1.6;
     }
 
     .tech-list {
@@ -75,5 +79,22 @@ const { role, company, period, description, technologies } = Astro.props;
         border-radius: 20px;
         border: 1px solid var(--border-bottom);
         background-color: var(--bg-tertiary);
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 1024px) {
+        .experience-card {
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 2rem;
+        }
+
+        .experience-header {
+            width: 30%;
+        }
+
+        .experience-body {
+            width: 70%;
+        }
     }
 </style>
